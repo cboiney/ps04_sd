@@ -1,9 +1,11 @@
 #main file for special_delivery project
 
+#for max integer
 import sys
 
 #returns the optimal sequence for a subproblem
 def sd_helper(distances, weights, position, visited, weight):
+    #check if we've already visited everything, if so we can return empty
     finished = True
     for v in range(0, len(visited)):
         if (visited[v] == 0):
@@ -70,8 +72,4 @@ def run_file(file):
             distances.append(int(line[0]))
             weights.append(int(line[1]))
 
-        print(special_delivery(distances, weights))
-        
-run_file("input1.txt")
-run_file("input2.txt")
-run_file("input3.txt")
+        return special_delivery(distances, weights)
