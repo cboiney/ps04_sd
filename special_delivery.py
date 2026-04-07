@@ -3,7 +3,7 @@
 #for max integer
 import sys
 
-#returns the optimal sequence for a subproblem
+#returns the optimal cost and sequence for a subproblem
 def sd_helper(distances, weights, position, visited, weight):
     #check if we've already visited everything, if so we can return empty
     finished = True
@@ -38,9 +38,6 @@ def sd_helper(distances, weights, position, visited, weight):
                 rest = result[1]
     #return the cost of the best choice, as well as the new array with the updated choice
     return (best, [(choice+1)] + rest)
-    
-
-    
 
 #returns the optimal sequence of deliveries for a given set of locations and distances
 def special_delivery(distances, weights):
